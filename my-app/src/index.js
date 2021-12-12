@@ -5,12 +5,19 @@ let exerciseData = {
     total: 50,
     lowerbody: 20,
     upperBody: 10,
-    goal: 90
+    cardio: 20,
+    goal: 100
 }
 
-class ExcerciseDayCounter extends Component{
-  render(){
-    const {total, lowerBody, upperBody, goal} = this.props
+const getPercent = decimal => {
+  return decimal * 100 + '%'
+}
+
+const calculateGoalProgress = (total, goal) => {
+  return getPercent(total /goal)
+}
+
+const ExcerciseDayCounter = ({total, lowerBody, upperBody, cardio, goal}) => {
     return(
       <section>
         <div>
@@ -23,11 +30,13 @@ class ExcerciseDayCounter extends Component{
             <p> Upper Body Days: {upperBody} </p>
         </div>
         <div>
-            <p> Goal Days: {goal} </p>
+            <p> Upper Body Days: {cardio} </p>
+        </div>
+        <div>
+            <p> Goal Progress: {calculateGoalProgress(total,goal)} </p>
         </div>
       </section>
     )
-  }
 }
 
 render(
@@ -35,6 +44,7 @@ render(
    total = {exerciseData.total}
    lowerBody = {exerciseData.lowerbody}
    upperBody = {exerciseData.upperBody} 
+   cardio = {exerciseData.cardio}
    goal = {exerciseData.goal}/>
   ,
   document.getElementById('root')
