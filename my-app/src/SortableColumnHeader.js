@@ -1,5 +1,5 @@
 import React from 'react';
-import './SortableColumnHeader.css';
+
 
 class SortableColumnHeader extends React.Component {
   constructor(props) {
