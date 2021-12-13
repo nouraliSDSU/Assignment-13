@@ -15,6 +15,10 @@ class Filters extends React.Component {
   }
   render() {
     return (
+        <div class="container">
+        <div class="row col-md-6 col-md-offset-3">
+        <div class="panel panel-primary">
+        <div class="panel-body"> 
       <form>
         <input
           type="text"
@@ -34,6 +38,10 @@ class Filters extends React.Component {
           Only show products in stock
         </p>
       </form>
+    </div>
+    </div>
+    </div>
+    </div>
     );
   }
 }

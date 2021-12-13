@@ -1,6 +1,8 @@
 import React from 'react';
 import ProductRow from './ProductRow.js';
 import SortableColumnHeader from './SortableColumnHeader.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 class ProductTable extends React.Component {
   constructor(props) {
@@ -54,8 +56,11 @@ class ProductTable extends React.Component {
     });
 
     return (
-      <div>
-        <table>
+       <div class="container">
+       <div class="row col-md-6 col-md-offset-3">
+       <div class="panel panel-primary">
+       <div class="panel-body">
+        <table class="table">
           <thead>
             <tr>
               <SortableColumnHeader
@@ -73,6 +78,9 @@ class ProductTable extends React.Component {
           <tbody>{rows}</tbody>
         </table>
       </div>
+    </div>
+    </div>
+    </div>
     );
   }
 }

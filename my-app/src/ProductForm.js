@@ -1,4 +1,6 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const RESET_VALUES = {id: '', category: '', price: '', stocked: false, name: ''};
 
@@ -31,38 +33,48 @@ class ProductForm extends React.Component {
     e.preventDefault();
   }
   render() {
-    return (
+    return ( 
+    <div class="container">
+    <div class="row col-md-6 col-md-offset-3">
+    <div class="panel panel-primary">
+    <div class="panel-body">   
       <form>
+        <div class="form-group">
         <h3>Enter a new product</h3>
         <p>
           <label>
             Name
             <br />
-            <input type="text" name="name" onChange={this.handleChange} value={this.state.product.name}/>
+            <input type="text" class="form-control" name="name" onChange={this.handleChange} value={this.state.product.name}/>
           </label>
         </p>
         <p>
           <label>
             Category
             <br />
-            <input type="text" name="category" onChange={this.handleChange} value={this.state.product.category} />
+            <input type="text" class="form-control" name="category" onChange={this.handleChange} value={this.state.product.category} />
           </label>
         </p>
         <p>
           <label>
             Price
             <br />
-            <input type="text" name="price" onChange={this.handleChange} value={this.state.product.price} />
+            <input type="text" class="form-control" name="price" onChange={this.handleChange} value={this.state.product.price} />
           </label>
         </p>
         <p>
           <label>
-            <input type="checkbox" name="stocked" onChange={this.handleChange} checked={this.state.product.stocked}/>
+            <input type="checkbox"  name="stocked" onChange={this.handleChange} checked={this.state.product.stocked}/>
             &nbsp;In stock?
           </label>
         </p>
-        <input type="submit" value="Save" onClick={this.handleSave}/>
+        <input type="submit" class="btn btn-success" value="Save" onClick={this.handleSave}/>
+        </div>   
       </form>
+    </div>
+    </div>
+    </div>
+    </div>
     );
   }
 }
